@@ -76,6 +76,8 @@ components:
           type: string
         password:
           type: string
+        avatar:
+          type: string
     Auth:
       type: object
       properties:
@@ -181,6 +183,8 @@ paths:
                 password:
                   type: string
                   description: Password
+                avatar:
+                  type: string
       responses:
         200:
           description: Successful creation.
