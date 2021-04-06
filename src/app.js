@@ -14,6 +14,7 @@ const winston = require('./common/logging');
 const wordRouter = require('./resources/words/word.router');
 const signinRouter = require('./resources/authentication/signin.router');
 const userRouter = require('./resources/users/user.router');
+const reviewRouter = require('./resources/review/review.router');
 const userTokenRouter = require('./resources/token/token.router');
 const userWordsRouter = require('./resources/userWords/userWord.router');
 const aggregatedWordsRouter = require('./resources/aggregatedWords/aggregatedWord.router');
@@ -58,6 +59,8 @@ app.use('/words', wordRouter);
 app.use('/signin', signinRouter);
 
 app.use('/users', userRouter);
+
+app.use('/review', reviewRouter);
 
 userRouter.use('/:id/tokens', userIdValidator, userTokenRouter);
 

@@ -10,6 +10,7 @@ const DOC_PATH_REGEX = /^\/doc\/?$/;
 const DOC_PATH_RESOURCES_REGEX = /^\/doc\/.+$/;
 const WORDS_PATH_REGEX = /^\/words.*$/;
 const USERS_PATH = '/users';
+const REVIEW_PATH = '/review';
 
 function isOpenPath(path) {
   return (
@@ -26,6 +27,14 @@ const checkAuthentication = (req, res, next) => {
   }
 
   if (req.path === USERS_PATH && req.method === 'POST') {
+    return next();
+  }
+
+  if (req.path === REVIEW_PATH && req.method === 'GET') {
+    return next();
+  }
+
+  if (req.path === REVIEW_PATH && req.method === 'PUT') {
     return next();
   }
 
